@@ -22,9 +22,8 @@
      <div class="row">
          <div class="col-8 offset-2">
         
-    
-<h1 class="display-6 text-center font-verdana text-decoration-underline"><?php if(isset($_SESSION['AuthClient'])){
-    echo $_SESSION['AuthClient']->login_client;
+<h1 class="display-6 text-center font-verdana text-decoration-underline"><?php if(isset($_SESSION['Auth'])){
+    echo $_SESSION['Auth']->login_client;
      } ?>Modifiez votre profile</h1>
 
          <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" class="text-center" enctype="multipart/form-data">
@@ -62,7 +61,6 @@
                         <label for="mail">Mail</label>
                         <input type="text" id="mail" name="mail" class="form-control" placeholder="Please enter a mail" value="<?=$editClie->getEmail_client();?>">
                     </div>
-                    
                     <div class="col-4 mt-3">
                         <label for="login">Login</label>
                         <input type="text" id="login" name="login" class="form-control" placeholder="Please enter a login" value="<?=$editClie->getLogin_client();?>">

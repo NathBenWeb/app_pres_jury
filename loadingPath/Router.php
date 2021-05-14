@@ -30,7 +30,14 @@ class Router{
                         $this->ctrUser->loginAdmin();
                         break;
                     case "logout_admin" :
-                        AuthAdminController::logoutAdmin();
+                        AuthController::logout();
+                        break;
+                    // -----------------------login/logout Public-------------
+                    case "sign_in" :
+                        $this->ctrPublicClient->loginClient();
+                        break;
+                    case "sign_out" :
+                        AuthController::logoutClient();
                         break;
                     // --------------------------------Users Admin-------------
                     case "list_users" :
@@ -91,13 +98,6 @@ class Router{
                     case "register_client" :
                         $this->ctrAdminClient->addClient();
                         break;
-                    // -----------------------login/logout Public-------------
-                    case "sign_in" :
-                        $this->ctrPublicClient->loginClient();
-                        break;
-                    // case "sign_out" :
-                    //     AuthClientController::logoutClient();
-                    //     break;
                     // --------------------------------PublicClients-------------
                     case "sign_up" :
                         $this->ctrPublicClient->signUpClient(); 

@@ -36,9 +36,9 @@ class UserController{
     }
 
     public function usersList(){
-        AuthAdminController::isLoggedAdmin();
-        AuthAdminController::accessUser2();
-        AuthAdminController::accessUser3();
+        AuthController::isLogged();
+        AuthController::accessUser2();
+        AuthController::accessUser3();
         
         if(isset($_GET["id"]) && isset($_GET["status"]) && !empty($_GET["id"])){
             $id_u = $_GET["id"];
@@ -60,9 +60,9 @@ class UserController{
     }
 
     public function addUser(){
-        AuthAdminController::isLoggedAdmin();
-        AuthAdminController::accessUser2();
-        AuthAdminController::accessUser3();
+        AuthController::isLogged();
+        AuthController::accessUser2();
+        AuthController::accessUser3();
 
         if(isset($_POST["soumis"])){
             if(filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) && strlen($_POST["pass"]) >= 4){
@@ -95,9 +95,9 @@ class UserController{
     }
 
     public function editUser(){
-        AuthAdminController::isLoggedAdmin();
-        AuthAdminController::accessUser2();
-        AuthAdminController::accessUser3();
+        AuthController::isLogged();
+        AuthController::accessUser2();
+        AuthController::accessUser3();
         
         if(isset($_GET["id"]) && filter_var($_GET["id"], FILTER_VALIDATE_INT)){
             $id = $_GET["id"];

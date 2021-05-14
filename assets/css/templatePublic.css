@@ -1,113 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 body {
   margin: 0;
 	min-height: 100vh;
 	display: grid;
 	grid-template-rows: auto 1fr auto;
-  font-family:'Abril Fatface', cursive;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 main{
   margin-top: 120px;
-}
-
-/*----- HEADER ------- */
-/* Style the navigation bar */
-#header {
-  width: 100%;
-  background-color:rgb(3, 3, 29);
-  overflow: auto;
-  border: solid 0.2px rgb(174,140,95);
-  font-family:'Abril Fatface', cursive;
-  position: fixed;
-  z-index: 3;
-  
-  
-}
-
-/* Navbar links */
-#header a {
-  float: left;
-  text-align: center;
-  /* padding: 12px; */
-  color: rgb(174,140,95);
-  text-decoration: none;
-  font-size: 20px;
-  margin-left: 20px;
-  margin-right: 10px;
-}
-
-
-/* Navbar links on mouse-over */
-#header a:hover {
-  background-color: rgb(174,140,95);
-  color: #f2f2f2;
-  border-radius: 10px;
-}
-#header a:first-child:hover {
-  background-color: #f2f2f2;
-}
-
-/* Current/active navbar link */
-/* .active {
-  background-color: #4CAF50;
 } */
 
-
-
-/*----- FOOTER ------- */
-#footer {
-  overflow: hidden;
-  background-color:rgb(3, 3, 29);
-  border: solid 0.2px rgb(174,140,95);
-  /* opacity: 0.7; */
-  /* position: fixed; */
-  bottom: 0;
-  width: 100%;
-  font-family:'Abril Fatface', cursive;
-  
-}
-
-#footer a{
-  float: left;
-  display: block;
-  color: rgb(174,140,95);
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 15px;
-  margin-left: 5px;
-}
-#footerSpan{
-  margin-right: 10px;
-  color:rgb(174,140,95);
-  font-size: 15px;
-}
-
-#footer a:hover {
-  background-color: rgb(174,140,95);
-  color: #f2f2f2;
-  border-radius: 10px;
-}
-#ancre{
-  color:rgb(174,140,95);
-}
-#ancre:hover{
-  background-color: rgb(174,140,95);
-  color: #f2f2f2;
-  border-radius: 10px;
-}
-
-
-/* ACCUEIl */
+/* -------------------------------------- ACCUEIL --------------------- */
 
 #buttonAccueil{
   background-color: rgb(174,140,95);
   color: #f2f2f2;
-  font-family: 'Abril Fatface', cursive;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin-left:280px;
   margin-bottom: 20px;
   padding :10px 20px 10px 20px;
-  
 }
 
 #buttonAccueil:hover {
@@ -118,26 +29,29 @@ main{
 #buttonValid{
   background-color: rgb(174,140,95);
   color: #f2f2f2;
-  font-family: 'Abril Fatface', cursive;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin-left: 333px;
   border-radius: 10px;
 }
+
 #buttonValid:hover {
   color: rgb(174,140,95);
   background-color: rgb(3, 3, 29);
  
 }
+
 .titrePlat{
-  font-family:'Abril Fatface', cursive;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: bold;
 }
+
 button{
-  font-family: 'Abril Fatface', cursive;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 #priceAccueil, #priceItem{
   color: rgb(174,140,95);
-  font-family: 'Abril Fatface', cursive;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: bold;
   font-size: larger;
 }
@@ -155,9 +69,9 @@ button{
 }
 
 #containerItem, #menuAccueil, #listChefs, #chefMealTitle{
-  font-family: 'Abril Fatface', cursive;
-  
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
 #containerItem{
   margin-top: 30px;
 }
@@ -168,11 +82,10 @@ button{
 
 #cardAccueil{
   border: solid 0.3px rgb(174,140,95);
-  
 }
 
 #buttonChefs, #btn_chefMeals, #search {
-  font-family: 'Abril Fatface', cursive;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color:  rgb(174,140,95);
   background-color: #CECECE;
   border: solid 1px rgb(174,140,95);
@@ -180,26 +93,24 @@ button{
 
 
 .validation{
-  font-family: 'Abril Fatface', cursive;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .titrePlat, .card-text{
   margin-left: 110px;
 }
-/* .card-body{
-  margin-top: 10px;
-} */
 
 h5 > span{
   color:  rgb(174,140,95);
   font-size: 30px;
 }
 
-/* ----------------------------CONTACT ----------------------------*/
+/* -------------------------------------- CONTACT --------------------- */
 
 #connex, #inscr{
   border: solid 3px black;
 }
+
 #inscription{
   
   width: 50%;
@@ -207,6 +118,7 @@ h5 > span{
   padding: 30px;
   padding-bottom: 14px;
 }
+
 #contact{
   width: 50%;
   padding-left: 30px;
@@ -214,22 +126,21 @@ h5 > span{
   border: solid 1px rgb(174,140,95);
   margin-left: 50px;
   padding-top: 30px;
- 
 }
+
 #titreInscription{
   text-align: center;
   color:rgb(3, 3, 29);
   font-size: 40px;
 }
+
 #titreContact{
- 
   text-align: center;
   color:rgb(3, 3, 29);
   font-size: 40px;
   padding-bottom: 20px;
-  
-
 }
+
 #titreImg{
   text-align: center;
 }
@@ -240,13 +151,12 @@ h5 > span{
   align-items: baseline;
   margin-top: 50px;
   margin-bottom: 30px;
- 
- 
 }
+
 .telEmail{
-  
   padding-bottom: 50px;
 }
+
 .contact-box {
   width: 100%;
   padding: 29px;
@@ -255,22 +165,17 @@ h5 > span{
   border-radius: 15px;
   box-shadow: 5px 5px 5px 7px rgba(0,0,0,0.25);
   align-items: center;
-  
 }
 
 .contact-box .text1 {
-  
   font-weight: 500;
   font-size: 20px;
 }
 
 .contact-box #email {
-  
   font-weight: 500;
   font-size: 20px;
 }
-
-
 
 .phone {
   background-color: rgb(3, 3, 29);
@@ -278,10 +183,9 @@ h5 > span{
   margin-bottom: 52px;
   text-align: center;
 }
+
 .phone:hover {
   background-color:#918d8d;
-  
-  
 }
 
 .email {
@@ -290,9 +194,9 @@ h5 > span{
   text-align: center;
   margin-bottom: 40px;
 }
+
 .email:hover{
   background-color:#918d8d;
-  
 }
 
 #tel, #emailContact{
@@ -306,12 +210,15 @@ h5 > span{
   font-size: 25px;
   font-weight: bold;
 }
+
 iframe{
   margin: 12px 0px 40px 0px;
 }
+
 .logoContact{
   font-size: 30px;
 }
+
 #check, #buttonContact{
   padding-top: 10px;
 }
@@ -320,7 +227,7 @@ iframe{
   background-color: linear-gradient( rgb(3, 3, 29), #f2f2f2, rgb(174,140,95));
 }
 
-/* ----------------------------ABOUT ----------------------------*/
+/* -------------------------------------- ABOUT --------------------- */
 #about{
   display: flex;
   justify-content: space-around;
@@ -332,13 +239,14 @@ iframe{
 #img_about{
   width: 50%;
   background-color: #333;
-    height: 70vh;
-    background: url("../../assets/pictures/mv_entree.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+  height: 70vh;
+  background: url("../../assets/pictures/mv_entree.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
 #text_about{
-  font-family: 'Abril Fatface', cursive;
+  /* font-family: 'Abril Fatface', cursive; */
   background-color: rgb(3, 3, 29);
   color: rgb(174,140,95);
   width: 50%;
@@ -346,11 +254,10 @@ iframe{
   margin-top: 70px;
   font-size: 3vh;
   text-align: center;
-  
-  
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;;
 }  
 
-
+/* -------------------------------------- RESPONSIVE PART --------------------- */
 
 @media screen and (max-width: 500px) {
   #footer a {

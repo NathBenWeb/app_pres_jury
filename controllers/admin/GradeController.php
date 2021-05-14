@@ -8,17 +8,17 @@ class GradeController{
    }
 
    public function gradesList(){
-        AuthAdminController::isLoggedAdmin();
-        AuthAdminController::accessUser2();
-        AuthAdminController::accessUser3();
+        AuthController::isLogged();
+        AuthController::accessUser2();
+        AuthController::accessUser3();
         $allGrade = $this -> adminGrade -> getGrades();
         require_once("./views/admin/grades/gradesList.php");
    }
 
    public function removeGrade(){
-        AuthAdminController::isLoggedAdmin();
-        AuthAdminController::accessUser2();
-        AuthAdminController::accessUser3();
+        AuthController::isLogged();
+        AuthController::accessUser2();
+        AuthController::accessUser3();
         if(isset($_GET["id"]) && $_GET["id"] < 1000 && filter_var($_GET["id"], FILTER_VALIDATE_INT)){
             $id = trim($_GET["id"]);
         
@@ -31,9 +31,9 @@ class GradeController{
    }
    
    public function editGrade(){
-       AuthAdminController::isLoggedAdmin();
-       AuthAdminController::accessUser2();
-       AuthAdminController::accessUser3();
+       AuthController::isLogged();
+       AuthController::accessUser2();
+       AuthController::accessUser3();
        if(isset($_GET["id"]) && $_GET["id"] < 1000 && filter_var($_GET["id"], FILTER_VALIDATE_INT)){
            $id = trim($_GET["id"]);
            $grade = $this -> adminGrade -> gradeItem($id);
@@ -49,9 +49,9 @@ class GradeController{
    }
 
    public function addGrade(){
-       AuthAdminController::isLoggedAdmin();
-       AuthAdminController::accessUser2();
-       AuthAdminController::accessUser3();
+       AuthController::isLogged();
+       AuthController::accessUser2();
+       AuthController::accessUser3();
        if(isset($_POST["soumis"]) && !empty($_POST["grade"])){
            $name_grade = trim(strip_tags(addslashes((htmlentities($_POST["grade"])))));
            $newGrade = new Grade();

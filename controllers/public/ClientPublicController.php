@@ -50,11 +50,11 @@ class ClientPublicController{
 
                 $data_c = $this -> adminClient -> signInClient($loginEmail, $pass);
                 if(!empty($data_c)){
-                    // if($data_c -> status > 0){
+                    if($data_c -> status_client > 0){
                         session_start();
                         $_SESSION["Auth"] = $data_c; 
                         header("location:index.php?action=shop");
-                    // }
+                    }
                 }else{
                     $error = "Votre login/email et/ou mot de passe ne correspondent pas";
                 }
@@ -66,7 +66,7 @@ class ClientPublicController{
     }
 
     public function profileClient(){
-        // AuthClientController::isLoggedClient();
+        AuthController::isLogged();
 
         $id = $_SESSION['Auth'] -> id_client;
 
@@ -103,7 +103,10 @@ class ClientPublicController{
                 
             $ok = $this -> adminClient -> updateClient($editProfile);
             if($ok){
+                $valid = "Votre profile a bien été modifié";
                 header("location:index.php?action=profile_client");  
+            }else{
+                $valid = "Votre profile n'a pas été modifié";
             }
         }
         require_once("./views/public/clients/profileClient.php");

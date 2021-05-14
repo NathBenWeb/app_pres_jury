@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/css/templatePublic.css">
+    <link rel="stylesheet" href="./assets/css/nav.css">
     <link rel="icon" type="image/png" sizes="18x18" href="./assets/pictures/logo2.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 </head>
@@ -14,9 +15,9 @@
 <header>
   <div id="ancre"></div>
   <div id="header" class="navbar">
-    <a id class="navbar-brand" href="index.php"><img id="logoHeader" src="./assets/pictures/logo2.png" alt="" class="logo" width="80px"></a>
-    <a class="nav-link active" aria-current="page" href="index.php?action=shop"><i class="fas fa-store"></i> Boutique</a>
-    <a class="nav-link active" aria-current="page" href="index.php?action=chefs"><i class="fas fa-bread-slice"></i> Vos chefs</a>
+    <a class="navbar-brand" href="index.php"><img id="logoHeader" src="./assets/pictures/logo2.png" alt="" class="logo" width="80px"></a>
+    <a class="nav-link" aria-current="page" href="index.php?action=shop"><i class="fas fa-store"></i> Boutique</a>
+    <a class="nav-link" aria-current="page" href="index.php?action=chefs"><i class="fas fa-bread-slice"></i> Vos chefs</a>
     <a class="nav-link" href="index.php?action=checkout" value=""><i class="fas fa-shopping-basket"></i> Votre panier</a>
     <a class="nav-link" href="index.php?action=contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
     <a class="nav-link" href="index.php?action=about"><i class="far fa-hand-point-right"></i> A propos</a>
@@ -25,11 +26,13 @@
     <a class="nav-link" href="index.php?action=sign_up" value="">S'inscrire</a>
     <?php } ?>
     <?php if(isset($_SESSION['Auth'])){?>
-    <a class="nav-link" href="index.php?action=logout_admin" value=""> Déconnexion</a>
+    <a class="nav-link" href="index.php?action=sign_out" value=""> Déconnexion</a>
     <a class="nav-link" href="index.php?action=profile_client" value=""> Bonjour <?php if(isset($_SESSION['Auth'])){
                   echo $_SESSION['Auth']->firstname_client;
                   } ?></a>
     <?php } ?>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+   
   </div> 
 </header>
   <main>
@@ -42,7 +45,9 @@
     <a class="nav-link active" href="">Politique de confidentialité</a>
     <a class="nav-link active" href="">FAQ</a>
     <a class="nav-link active" id="ancre" href="#ancre"><i class="fas fa-angle-double-up"></i></a>
+    
     <a href="index.php?action=login_admin"><i class="fas fa-users-cog"></i></i></a>
+   
     <span id="footerSpan" class="">Copyright CM <i class="fa fa-copyright" aria-hidden="true"></i> 2021</span>
   </div>
 </footer>
@@ -53,6 +58,7 @@
   <script src="https://js.stripe.com/v3/"></script>
   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
   <script src="./assets/js/scriptStripe.js"></script>
+  <script src="./assets/js/nav.js"></script>
   <!-- <script src="./assets/js/templatePublic.js"></script> -->
   
   

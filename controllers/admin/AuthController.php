@@ -1,17 +1,24 @@
 <?php
 // session_start();
 
-class AuthAdminController{
-    public static function isLoggedAdmin(){
+class AuthController{
+    public static function isLogged(){
         if(!isset($_SESSION['Auth'])){
             header('location:index.php?action=login_admin');
             exit;
         }
     }
 
-    public static function logoutAdmin(){
+    public static function logout(){
+        unset($_SESSION['Auth']);
+        header('location:index.php?action=login_admin');
+        exit;
+    }
+
+    public static function logoutClient(){
         unset($_SESSION['Auth']);
         header('location:index.php?action=shop');
+        exit;
     }
 
     public static function accessUser2(){

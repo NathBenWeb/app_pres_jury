@@ -9,7 +9,7 @@ class MealController{
     }
  
     public function mealsList(){
-        AuthAdminController::isLoggedAdmin();
+        AuthController::isLogged();
         // Ici in dit si on trouve la recherche faire la recherche sinon rester en mode affichage de la liste
         if(isset($_POST["soumis"]) && !empty($_POST["search"])){
             $search = trim(htmlentities(addslashes($_POST["search"])));
@@ -23,8 +23,8 @@ class MealController{
     }
 
     public function removeMeal(){
-        AuthAdminController::isLoggedAdmin();
-        AuthAdminController::accessUser3();
+        AuthController::isLogged();
+        AuthController::accessUser3();
         if(isset($_GET["id"]) && filter_var($_GET["id"], FILTER_VALIDATE_INT)){
             $id = $_GET["id"];
             $delM = new Meal;
@@ -38,7 +38,7 @@ class MealController{
     }
 
     public function editMeal(){
-        AuthAdminController::isLoggedAdmin();
+        AuthController::isLogged();
         if(isset($_GET["id"]) && $_GET["id"] < 1000 && filter_var($_GET["id"], FILTER_VALIDATE_INT)){
             $id = trim($_GET["id"]);
             $editM = new Meal;
@@ -84,7 +84,7 @@ class MealController{
     }
 
     public function addMeal(){
-        AuthAdminController::isLoggedAdmin();
+        AuthController::isLogged();
         if(isset($_POST["soumis"]) && !empty($_POST["name_meal"]) && !empty($_POST["price"])){
     
             $name_meal = htmlspecialchars(trim($_POST["name_meal"]));

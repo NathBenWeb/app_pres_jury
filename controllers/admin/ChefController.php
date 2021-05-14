@@ -8,14 +8,14 @@ class ChefController{
     }
     
     public function chefsList(){
-        AuthAdminController::isLoggedAdmin();
+        AuthController::isLogged();
         $allChef = $this -> adChef -> getChefs();
         require_once("./views/admin/chefs/chefsList.php");
     }
 
     public function removeChef(){
-        AuthAdminController::isLoggedAdmin();
-        AuthAdminController::accessUser3();
+        AuthController::isLogged();
+        AuthController::accessUser3();
         if(isset($_GET["id"]) && $_GET["id"] < 1000 && filter_var($_GET["id"], FILTER_VALIDATE_INT)){
             $id = trim($_GET["id"]);
             
@@ -28,7 +28,7 @@ class ChefController{
     }
 
     public function editChef(){
-        AuthAdminController::isLoggedAdmin();
+        AuthController::isLogged();
         if(isset($_GET["id"]) && $_GET["id"] < 1000 && filter_var($_GET["id"], FILTER_VALIDATE_INT)){
             $id = trim($_GET["id"]);
             $chef = $this -> adChef -> chefItem($id);
@@ -52,7 +52,7 @@ class ChefController{
     }
 
     public function addChef(){
-        AuthAdminController::isLoggedAdmin();
+        AuthController::isLogged();
         if(isset($_POST["soumis"]) && !empty($_POST["name_chef"])){
                 $name_chef = trim(addslashes((htmlentities($_POST["name_chef"]))));
                 $picture_chef = $_FILES["picture"]["name"];

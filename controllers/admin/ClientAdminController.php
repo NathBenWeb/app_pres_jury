@@ -9,9 +9,9 @@ class ClientAdminController{
     }
 
     public function clientsList(){
-        AuthAdminController::isLoggedAdmin();
-        AuthAdminController::accessUser2();
-        AuthAdminController::accessUser3();
+        AuthController::isLogged();
+        AuthController::accessUser2();
+        AuthController::accessUser3();
 
         if(isset($_GET["id"]) && isset($_GET["status"]) && !empty($_GET["id"])){
             $id_c = $_GET["id"];
@@ -33,9 +33,9 @@ class ClientAdminController{
     }
 
     public function addClient(){
-        AuthAdminController::isLoggedAdmin();
-        AuthAdminController::accessUser2();
-        AuthAdminController::accessUser3();
+        AuthController::isLogged();
+        AuthController::accessUser2();
+        AuthController::accessUser3();
 
         if(isset($_POST["soumis"]) && !empty($_POST['name']) && !empty($_POST['login']) && !empty($_POST['pass'])){
             if(filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) && strlen($_POST["pass"]) >= 4){
@@ -71,9 +71,9 @@ class ClientAdminController{
     }
 
     public function editClient(){
-        AuthAdminController::isLoggedAdmin();
-        AuthAdminController::accessUser2();
-        AuthAdminController::accessUser3();
+        AuthController::isLogged();
+        AuthController::accessUser2();
+        AuthController::accessUser3();
         
         if(isset($_GET["id"]) && filter_var($_GET["id"], FILTER_VALIDATE_INT)){
             $id = $_GET["id"];
