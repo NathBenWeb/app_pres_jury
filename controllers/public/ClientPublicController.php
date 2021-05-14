@@ -52,8 +52,10 @@ class ClientPublicController{
                 if(!empty($data_c)){
                     if($data_c -> status_client > 0){
                         session_start();
-                        $_SESSION["Auth"] = $data_c; 
+                        $_SESSION["AuthClient"] = $data_c; 
                         header("location:index.php?action=shop");
+                    }else{
+                        $error = "Votre profile est momentanéments désactivé suite aux problèmes rencontrés";
                     }
                 }else{
                     $error = "Votre login/email et/ou mot de passe ne correspondent pas";
@@ -68,7 +70,7 @@ class ClientPublicController{
     public function profileClient(){
         AuthController::isLogged();
 
-        $id = $_SESSION['Auth'] -> id_client;
+        $id = $_SESSION['AuthClient'] -> id_client;
 
         $editP = new Client();
             

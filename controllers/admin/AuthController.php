@@ -2,6 +2,7 @@
 // session_start();
 
 class AuthController{
+    // Authentification admin -------------------------------------
     public static function isLogged(){
         if(!isset($_SESSION['Auth'])){
             header('location:index.php?action=login_admin');
@@ -12,12 +13,6 @@ class AuthController{
     public static function logout(){
         unset($_SESSION['Auth']);
         header('location:index.php?action=login_admin');
-        exit;
-    }
-
-    public static function logoutClient(){
-        unset($_SESSION['Auth']);
-        header('location:index.php?action=shop');
         exit;
     }
 
@@ -33,5 +28,19 @@ class AuthController{
             echo "Vous n'avez pas les droits d'accès à cette page";
         exit;
         }
+    }
+
+    // Authentification client---------------------------------------
+    public static function isLoggedClient(){
+        if(!isset($_SESSION['AuthClient'])){
+            header('location:index.php?action=shop');
+            exit;
+        }
+    }
+
+    public static function logoutClient(){
+        unset($_SESSION['AuthClient']);
+        header('location:index.php?action=shop');
+        exit;
     }
 }

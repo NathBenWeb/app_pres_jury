@@ -23,7 +23,7 @@
 
   <?php if(isset($_SESSION["Auth"])){?>
   <!-- <a href="index.php?action=login"><i class="fas fa-sign-out-alt text-white"></i>Connexion</a> -->
-  <h2 class=" h2Sidenav text-white text-center mb-4">Bonjour <?php if(isset($_SESSION["Auth"])) echo $_SESSION["Auth"]->firstname;?></h2>
+  <h2 class=" h2Sidenav text-white text-center mb-4">Bonjour <?php if(isset($_SESSION["Auth"])){echo $_SESSION["Auth"]->firstname; }?></h2>
     <a href="index.php?action=logout_admin"><i class="fas fa-key" style="color:rgb(174,140,95);"></i> Déconnexion</a>
   
   
@@ -68,6 +68,7 @@
   </div>
   <?php }} ?>
   <a href="index.php?action=shop" style="font-size: 15px;"><i class="fas fa-undo-alt" style="color:rgb(174,140,95);" aria-hidden="true"></i> Retour à la boutique</a>
+  
 </div>
 <div class="container mt-5">
     <div class="main">

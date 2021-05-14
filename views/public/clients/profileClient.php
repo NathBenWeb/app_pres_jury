@@ -22,8 +22,8 @@
      <div class="row">
          <div class="col-8 offset-2">
         
-<h1 class="display-6 text-center font-verdana text-decoration-underline"><?php if(isset($_SESSION['Auth'])){
-    echo $_SESSION['Auth']->login_client;
+<h1 class="display-6 text-center font-verdana text-decoration-underline"><?php if(isset($_SESSION['AuthClient'])){
+    echo $_SESSION['AuthClient']->login_client;
      } ?>Modifiez votre profile</h1>
 
          <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" class="text-center" enctype="multipart/form-data">

@@ -21,14 +21,14 @@
     <a class="nav-link" href="index.php?action=checkout" value=""><i class="fas fa-shopping-basket"></i> Votre panier</a>
     <a class="nav-link" href="index.php?action=contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
     <a class="nav-link" href="index.php?action=about"><i class="far fa-hand-point-right"></i> A propos</a>
-    <?php if(!isset($_SESSION['Auth'])){?>
+    <?php if(!isset($_SESSION['AuthClient'])){?>
     <a class="nav-link" href="index.php?action=sign_in" value=""> Connexion</a> <!-- Ajouter menu déroulant Mon compte si connecté avec "Hello prénom" qui ramène à une page "mettre à jour mes informations" puis une condition disant que si connecté marquer Déconnexion si non connecté marque Connexion -->
     <a class="nav-link" href="index.php?action=sign_up" value="">S'inscrire</a>
     <?php } ?>
-    <?php if(isset($_SESSION['Auth'])){?>
+    <?php if(isset($_SESSION['AuthClient'])){?>
     <a class="nav-link" href="index.php?action=sign_out" value=""> Déconnexion</a>
-    <a class="nav-link" href="index.php?action=profile_client" value=""> Bonjour <?php if(isset($_SESSION['Auth'])){
-                  echo $_SESSION['Auth']->firstname_client;
+    <a class="nav-link" href="index.php?action=profile_client" value=""> Bonjour <?php if(isset($_SESSION['AuthClient'])){
+                  echo $_SESSION['AuthClient']->firstname_client;
                   } ?></a>
     <?php } ?>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
