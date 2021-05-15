@@ -1,6 +1,4 @@
 <?php
-// session_start();
-
 class AuthController{
     // Authentification admin -------------------------------------
     public static function isLogged(){
@@ -13,7 +11,11 @@ class AuthController{
     public static function logout(){
         unset($_SESSION['Auth']);
         header('location:index.php?action=login_admin');
-        exit;
+    }
+
+    public static function logoutAndTransferShop(){
+        unset($_SESSION['Auth']);
+        header('location:index.php?action=shop');
     }
 
     public static function accessUser2(){
@@ -41,6 +43,10 @@ class AuthController{
     public static function logoutClient(){
         unset($_SESSION['AuthClient']);
         header('location:index.php?action=shop');
-        exit;
+    }
+
+    public static function logoutAndTransferAdmin(){
+        unset($_SESSION['AuthClient']);
+        header('location:index.php?action=login_admin');
     }
 }

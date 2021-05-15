@@ -1,7 +1,7 @@
 <?php ob_start();?>
 <div class="container">
 
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+<!-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="./assets/pictures/cl.jpg" class="d-block w-50" alt="...">
@@ -26,7 +26,7 @@
     </div>
   </div>
   
-</div>
+</div> -->
 
 <?php foreach($allChef as $chef){?>
 

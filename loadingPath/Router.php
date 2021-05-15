@@ -32,6 +32,9 @@ class Router{
                     case "logout_admin" :
                         AuthController::logout();
                         break;
+                    case "transferShop" :
+                        AuthController::logoutAndTransferShop();
+                        break; 
                     // -----------------------login/logout Public-------------
                     case "sign_in" :
                         $this->ctrPublicClient->loginClient();
@@ -39,6 +42,9 @@ class Router{
                     case "sign_out" :
                         AuthController::logoutClient();
                         break;
+                    case "transferAdmin" :
+                        AuthController::logoutAndTransferAdmin();
+                        break;                    
                     // --------------------------------Users Admin-------------
                     case "list_users" :
                         $this->ctrUser->usersList(); 
@@ -110,7 +116,7 @@ class Router{
                         $this->ctrPublic-> getPubMeals();
                         break;
                     case "chefs" :
-                        $this->ctrPublic-> chefs();
+                        $this->ctrPublic-> chefsSlides();
                         break;
                     case "checkout" :
                         $this->ctrPublic->recap();
@@ -145,8 +151,8 @@ class Router{
                 }
             }
             else{
-                $this->ctrPublic->home();
-                session_unset();
+                // $this->ctrPublic->home();
+                session_destroy();
             }
         }catch(Exception $e){
             $this->page404($e->getMessage());

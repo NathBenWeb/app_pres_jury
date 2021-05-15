@@ -21,9 +21,9 @@
   <h1 class="h1Sidenav text-center text-white">Un Chef à la Maison</h4>
   <div class=""><a class="navbar-brand text-center" href="#"><img src="./assets/pictures/logo2.png" width="70px"/></a></div>
 
-  <?php if(isset($_SESSION["Auth"])){?>
+  <?php if(isset($_SESSION["Auth"])){ ?>
   <!-- <a href="index.php?action=login"><i class="fas fa-sign-out-alt text-white"></i>Connexion</a> -->
-  <h2 class=" h2Sidenav text-white text-center mb-4">Bonjour <?php if(isset($_SESSION["Auth"])){echo $_SESSION["Auth"]->firstname; }?></h2>
+  <h2 class=" h2Sidenav text-white text-center mb-4">Bonjour <?php echo $_SESSION["Auth"]->firstname; ?></h2>
     <a href="index.php?action=logout_admin"><i class="fas fa-key" style="color:rgb(174,140,95);"></i> Déconnexion</a>
   
   
@@ -67,7 +67,7 @@
     <a href="index.php?action=list_users"><i class="fa fa-list text-white" aria-hidden="true"></i> Liste</a>
   </div>
   <?php }} ?>
-  <a href="index.php?action=shop" style="font-size: 15px;"><i class="fas fa-undo-alt" style="color:rgb(174,140,95);" aria-hidden="true"></i> Retour à la boutique</a>
+  <a href="index.php?action=transferShop" style="font-size: 15px;"><i class="fas fa-undo-alt" style="color:rgb(174,140,95);" aria-hidden="true"></i> Retour à la boutique</a>
   
 </div>
 <div class="container mt-5">

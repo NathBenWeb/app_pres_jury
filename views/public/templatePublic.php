@@ -15,22 +15,32 @@
 <header>
   <div id="ancre"></div>
   <div id="header" class="navbar">
-    <a class="navbar-brand" href="index.php"><img id="logoHeader" src="./assets/pictures/logo2.png" alt="" class="logo" width="80px"></a>
+    <a id="logoHeader" class="navbar-brand" href="index.php"><img  src="./assets/pictures/sans_titre.png" alt="" class="logo" width="50px"></a>
     <a class="nav-link" aria-current="page" href="index.php?action=shop"><i class="fas fa-store"></i> Boutique</a>
     <a class="nav-link" aria-current="page" href="index.php?action=chefs"><i class="fas fa-bread-slice"></i> Vos chefs</a>
     <a class="nav-link" href="index.php?action=checkout" value=""><i class="fas fa-shopping-basket"></i> Votre panier</a>
     <a class="nav-link" href="index.php?action=contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
     <a class="nav-link" href="index.php?action=about"><i class="far fa-hand-point-right"></i> A propos</a>
+
     <?php if(!isset($_SESSION['AuthClient'])){?>
-    <a class="nav-link" href="index.php?action=sign_in" value=""> Connexion</a> <!-- Ajouter menu déroulant Mon compte si connecté avec "Hello prénom" qui ramène à une page "mettre à jour mes informations" puis une condition disant que si connecté marquer Déconnexion si non connecté marque Connexion -->
+    <a class="nav-link" href="index.php?action=sign_in" value=""> Connexion
     <a class="nav-link" href="index.php?action=sign_up" value="">S'inscrire</a>
     <?php } ?>
+
     <?php if(isset($_SESSION['AuthClient'])){?>
-    <a class="nav-link" href="index.php?action=sign_out" value=""> Déconnexion</a>
-    <a class="nav-link" href="index.php?action=profile_client" value=""> Bonjour <?php if(isset($_SESSION['AuthClient'])){
-                  echo $_SESSION['AuthClient']->firstname_client;
-                  } ?></a>
-    <?php } ?>
+    <li class="nav-item dropdown" >
+      <a class="nav-link dropdown-toggle" href="#" id="boutonDropdownNav" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Bonjour <?php if(isset($_SESSION['AuthClient'])){
+                      echo $_SESSION['AuthClient']->firstname_client;
+                    } ?>
+      </a>
+       
+      <ul id="dropdownNav" class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
+        <li><a class="nav-link" href="index.php?action=profile_client" value="">Mon profile</a></li>
+        <li><a class="nav-link" href="index.php?action=sign_out" value="">Déconnexion</a></li>
+      </ul>
+    </li>
+    <?php } ?> 
     <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
    
   </div> 
@@ -46,7 +56,7 @@
     <a class="nav-link active" href="">FAQ</a>
     <a class="nav-link active" id="ancre" href="#ancre"><i class="fas fa-angle-double-up"></i></a>
     
-    <a href="index.php?action=login_admin"><i class="fas fa-users-cog"></i></i></a>
+    <a href="index.php?action=transferAdmin"><i class="fas fa-users-cog"></i></i></a>
    
     <span id="footerSpan" class="">Copyright CM <i class="fa fa-copyright" aria-hidden="true"></i> 2021</span>
   </div>

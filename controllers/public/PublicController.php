@@ -190,6 +190,11 @@ class PublicController{
         
             require_once("./views/public/success.php");
     }
+    public function chefsSlides(){
+      
+        $allChef = $this -> pubChef -> getChefs();
+        require_once("./views/public/chefs.php");
+    }
 
     public function validation(){
         require_once('./views/public/validation.php');

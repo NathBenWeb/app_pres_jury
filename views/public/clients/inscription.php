@@ -5,10 +5,15 @@
                 <h1 id="titreInscription">Formulaire d'inscription</h1>
                     <form id="contact-form" action="<?php $_SERVER["PHP_SELF"];?>" method="post" class="input-group row g-3">
                 
-                    <div class="col-md-12 ">
+                    <div class="col-12 ">
                     <img class="fit-picture" src="./assets/pictures/contact.png" alt="" width="100%"/>
                     </div>
                         <h4 id="titreImg" class="">Rejoignez-nous !</h4>
+                        <?php
+                if(isset($erreur)){
+                    echo $erreur;
+                }
+                ?>
                     <div class="col-md-12">
                         <input type="name" name="name" class="form-control" id="inputName" placeholder="Entrez votre nom" required/>
                     </div>
@@ -31,10 +36,17 @@
                         <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="Entrez votre email" required/>
                     </div>
                     <div class="col-md-12">
+                        <input type="email" name="email2" class="form-control" id="inputEmail4" placeholder="Confirmez votre email" required/>
+                    </div>
+                    <div class="col-md-12">
                         <input type="login" name="login" class="form-control" id="inputLogin" placeholder="Choisissez votre login" required/>
+                    <?php $login?>
                     </div>
                     <div>
                         <input type="password" name="pass" class="form-control" id="inputPassword4" placeholder="Choisissez votre mot de passe" required/>
+                    </div>
+                    <div>
+                        <input type="password" name="pass2" class="form-control" id="inputPassword4" placeholder="Confirmez votre mot de passe" required/>
                     </div>
                     <div class="col-12">
                         <div id="check" class="form-check">
@@ -43,9 +55,10 @@
                         </div>
                     </div>
                     <div id="buttonContact" class="col-12">
-                        <button type="submit" name="soumis" class="btn" style="border-radius: 30px; background-color:rgb(174,140,95); color: #f2f2f2;">Confirmer</button>
+                        <button type="submit" name="soumis" class="btn" style="border-radius: 30px; background-color:rgb(174,140,95); color: #f2f2f2;">Je m'inscris</button>
                     </div>
                 </form>
+                
             </section>
 
             

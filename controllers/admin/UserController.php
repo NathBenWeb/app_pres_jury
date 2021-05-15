@@ -33,6 +33,7 @@ class UserController{
             }
         }
         require_once("./views/admin/users/loginUser.php");
+        
     }
 
     public function usersList(){
@@ -125,6 +126,7 @@ class UserController{
                 $user->getGrade()->setId_g($id_g);
                 
                 $this->adminUser->updateUser($user);
+                
                 header("location:index.php?action=list_users");
             }
             require_once("./views/admin/users/editUser.php");

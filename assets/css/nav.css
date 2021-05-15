@@ -7,14 +7,13 @@ body {
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 main{
-  margin-top: 120px;
+  margin-top: 70px;
 }
 
 /* -------------------------------------- HEADER --------------------- */
 #header {
   width: 100%;
   background-color:rgb(3, 3, 29);
-  overflow: hidden;
   border: solid 0.2px rgb(174,140,95);
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   position: fixed;
@@ -38,17 +37,28 @@ main{
 }
 
 #header a:hover {
-  background-color: rgb(174,140,95);
+  /* background-color: rgb(9, 9, 59); */
   color: #f2f2f2;
   border-radius: 10px;
 }
 
-#header a:first-child:hover {
-  background-color: #f2f2f2;
-}
-
 #header .icon {
     display: none;
+  }
+
+  #boutonDropdownNav:hover{
+    /* background-color: rgb(174,140,95); */
+    color: rgb(3, 3, 29);
+    /* border-radius: 10px; */
+    overflow: visible;
+  }
+
+  #dropdownNav{
+    background-color: #CECECE;
+  }
+
+  li{
+    list-style: none;
   }
 
 /* -------------------------------------- FOOTER --------------------- */

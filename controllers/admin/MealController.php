@@ -10,7 +10,6 @@ class MealController{
  
     public function mealsList(){
         AuthController::isLogged();
-        // Ici in dit si on trouve la recherche faire la recherche sinon rester en mode affichage de la liste
         if(isset($_POST["soumis"]) && !empty($_POST["search"])){
             $search = trim(htmlentities(addslashes($_POST["search"])));
             echo  $search;
@@ -60,7 +59,7 @@ class MealController{
                 $id_chef = htmlentities(trim($_POST["id_chef"]));
                 $picture_meal = $_FILES ["picture"]["name"];
 
-                // On va modifier l'objet $editCar créé plus haut dans le premier if
+                // On va modifier l'objet $editMeal créé plus haut dans le premier if
                 $editMeal->setName_meal($name_meal);
                 $editMeal->setStart($start);
                 $editMeal->setDish($dish);
