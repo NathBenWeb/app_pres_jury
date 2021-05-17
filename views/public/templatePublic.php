@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Un chef à la maison</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./assets/css/templatePublic.css">
     <link rel="stylesheet" href="./assets/css/nav.css">
+    <link rel="stylesheet" href="./assets/css/contact.css">
+    <link rel="stylesheet" href="./assets/css/inscription.css">
+    <link rel="stylesheet" href="./assets/css/chefs.css">
+    <link rel="stylesheet" href="./assets/css/about.css">
+    <link rel="stylesheet" href="./assets/css/shop.css">
+    <link rel="stylesheet" href="./assets/css/chefMeals.css">
     <link rel="icon" type="image/png" sizes="18x18" href="./assets/pictures/logo2.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 </head>
@@ -16,6 +21,7 @@
   <div id="ancre"></div>
   <div id="header" class="navbar">
     <a id="logoHeader" class="navbar-brand" href="index.php"><img  src="./assets/pictures/sans_titre.png" alt="" class="logo" width="50px"></a>
+    <a id="hamburger" href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
     <a class="nav-link" aria-current="page" href="index.php?action=shop"><i class="fas fa-store"></i> Boutique</a>
     <a class="nav-link" aria-current="page" href="index.php?action=chefs"><i class="fas fa-bread-slice"></i> Vos chefs</a>
     <a class="nav-link" href="index.php?action=checkout" value=""><i class="fas fa-shopping-basket"></i> Votre panier</a>
@@ -41,7 +47,7 @@
       </ul>
     </li>
     <?php } ?> 
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+    
    
   </div> 
 </header>

@@ -18,10 +18,10 @@ class ClientPublicController{
                 $city = trim(strip_tags(addslashes($_POST["city"])));
                 $country = trim(strip_tags(addslashes($_POST["country"])));
                 $email = trim(strip_tags(addslashes($_POST["email"])));
-                $email = trim(strip_tags(addslashes($_POST["email2"])));
+                $email2 = trim(strip_tags(addslashes($_POST["email2"])));
                 $login = trim(strip_tags(addslashes(strlen($_POST["login"]))));
                 $pass = sha1(trim(strip_tags(addslashes($_POST["pass"]))));
-                $pass = sha1(trim(strip_tags(addslashes($_POST["pass2"]))));
+                $pass2 = sha1(trim(strip_tags(addslashes($_POST["pass2"]))));
 
                 $newC = new Client();
                 $newC->setName_client($name);
@@ -31,8 +31,10 @@ class ClientPublicController{
                 $newC->setCity($city);
                 $newC->setCountry($country);
                 $newC->setEmail_client($email);
+                $newC->setEmail_client($email2);
                 $newC->setLogin_client($login);
                 $newC->setPass_client($pass);
+                $newC->setPass_client($pass2);
                 $newC->setStatus_client(1);                
                 
                 $ok = $this -> adminClient -> insertClient($newC);
@@ -90,8 +92,10 @@ class ClientPublicController{
             $city = trim(strip_tags(addslashes($_POST["city"])));
             $country = trim(strip_tags(addslashes($_POST["country"])));
             $email = trim(strip_tags(addslashes($_POST["email"])));
+            $email2 = trim(strip_tags(addslashes($_POST["email2"])));
             $login = trim(strip_tags(addslashes($_POST["login"])));
             $pass = md5(trim(strip_tags(addslashes($_POST["pass"]))));
+            $pass2 = md5(trim(strip_tags(addslashes($_POST["pass2"]))));
 
             $editProfile->setId_client($id);
             $editProfile->setName_client($name);
@@ -101,8 +105,10 @@ class ClientPublicController{
             $editProfile->setCity($city);
             $editProfile->setCountry($country);
             $editProfile->setEmail_client($email);
+            $editProfile->setEmail_client($email2);
             $editProfile->setLogin_client($login);
             $editProfile->setPass_client($pass);
+            $editProfile->setPass_client($pass2);
             $editProfile->setStatus_client(1);                
                 
             $ok = $this -> adminClient -> updateClient($editProfile);

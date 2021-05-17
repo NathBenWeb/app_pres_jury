@@ -50,51 +50,57 @@ class PublicController{
         }
     }
 
-    
-    // public function recap(){ //add panier
-    //     if(isset($_POST["envoi"]) && !empty($_POST["name_meal"]) && !empty($_POST["price"])){
-    //         $id_meal = htmlspecialchars(addslashes($_POST["id_meal"]));
-    //         $name_meal = htmlspecialchars(addslashes($_POST["name_meal"]));
-    //         $picture_meal = htmlspecialchars(addslashes($_POST["picture_meal"]));
-    //         $name_chef = htmlspecialchars(addslashes($_POST["name_chef"]));
-    //         $price = htmlspecialchars(addslashes($_POST["price"]));
-    //         $total=0;
-    //     }
 
-    //         $newM = new Meal();
-    //         $newM->setId_meal($id_meal);
-    //         $newM->setName_meal($name_meal);
-    //         $newM->setPicture_meal($picture_meal);
-    //         $newM->setPrice($price);
-    //         $newM->getChef()->setName_chef($name_chef);
-
-    //         $ok = $this->pubMeal->getMeals();
-    //         if($ok){
-    //             for($i = 0; $i < count($_POST[$id_meal]); $i++){
-    //                 $total += $_POST[$id_meal][$i] * $_POST[$id_meal][$price][$i];
-    //             }
-    //             return $total;
-    //             header("location:index.php?action=shop&id");
-    //         }
-    //         $tabChef = $this -> pubChef -> getChefs();
-    //         require_once('./views/public/mealItem.php');
-        
-    // }
-
-    public function recap(){
-        // var_dump($_POST);
+    public function recap(){ //add panier
         if(isset($_POST["envoi"]) && !empty($_POST["name_meal"]) && !empty($_POST["price"])){
             $id_meal = htmlspecialchars(addslashes($_POST["id_meal"]));
             $name_meal = htmlspecialchars(addslashes($_POST["name_meal"]));
             $picture_meal = htmlspecialchars(addslashes($_POST["picture_meal"]));
             $name_chef = htmlspecialchars(addslashes($_POST["name_chef"]));
             $price = htmlspecialchars(addslashes($_POST["price"]));
-
-            require_once('./views/public/mealItem.php');
+            $total=0;
         }
+
+            $newM = new Meal();
+            $newM->setId_meal($id_meal);
+            $newM->setName_meal($name_meal);
+            $newM->setPicture_meal($picture_meal);
+            $newM->setPrice($price);
+            $newM->getChef()->setName_chef($name_chef);
+
+            $ok = $this->pubMeal->getMeals();
+            if($ok){
+                for($i = 0; $i < count($_POST[$id_meal]); $i++){
+                    $total += $_POST[$id_meal][$i] * $_POST[$id_meal][$price][$i];
+                }
+                return $total;
+                header("location:index.php?action=shop&id");
+            }
+            $tabChef = $this -> pubChef -> getChefs();
+            require_once('./views/public/mealItem.php');
+        
     }
+   
+
+    // public function removePanier(){ //Remove test
+    //     if(isset($_GET["id"]) && filter_var($_GET["id"], FILTER_VALIDATE_INT)){
+    //         $id = $_GET["id"];
+    //         $delM = new Meal;
+    //         $delM->setId_meal($id);
+    //         $nbLine = $this -> pubMeal->getMeals();
+    
+    //         if($nbLine > 0){
+    //             header("location:index.php?action=checkout");
+    //         }
+    //     }
+    //     require_once('./views/public/mealItem.php');
+    // }
+   
+    
 
     public function payment(){
+// var_dump($_POST);
+       
         if(isset($_POST) && !empty($_POST['email'])){
 
             \Stripe\Stripe::setApiKey('sk_test_51IM8bvL6FL0Y9IWw4LZMREUr9FM3PaNP26KsYr225kTNReAsL4qOY9xY9vcXXjY0u5kPBKSzVUCfgrFdOsrKbqV500v4fZaacP');
@@ -126,12 +132,16 @@ class PublicController{
     }
 
     public function confirmation(){
+        // (int)$_SESSION["pay"]["quantite"];
         $meal = new Meal();
         $meal -> setId_meal($_SESSION["pay"]["id_meal"]);
         $email = $_SESSION["pay"]["email"];
         $name_meal = $_SESSION["pay"]["name_meal"];
         $name_chef = $_SESSION["pay"]["name_chef"];
         $price = $_SESSION["pay"]["price"];
+
+        $client = new Client();
+        $client -> getFirstname_client();
 
         $mail = new PHPMailer(true);
      
@@ -170,53 +180,12 @@ class PublicController{
         
             require_once("./views/public/success.php");
     }
-    // -----------------------------Static public pages--------------------------------
+    
     public function validation(){
         require_once('./views/public/validation.php');
     }
 
     public function cancel(){
         require_once("./views/public/cancel.php");
-    }
-    
-    public function chefsSlides(){
-        if(isset($_GET['id']) && !empty($_GET['id'])){
-            if( isset($_POST['soumis']) && !empty($_POST['search'])){
-                $search2 = trim(htmlspecialchars(addslashes($_POST['search'])));
-                $tabChef2 = $this->pubChef->getChefs();
-                $meals2 = $this->pubMeal->getMeals($search2);
-                require_once('./views/public/chefs.php');
-            }
-            
-            $id = trim(htmlentities(addslashes($_GET['id'])));
-            $m2 = new Meal();
-            $m2->getChef()->setId_chef($id);
-            $tabChef2 = $this->pubChef->getChefs();
-            $menus = $this->pubModel->findMealByChef($m2);
-            require_once('./views/public/chefMeals.php');
-      
-        }else{
-            if( isset($_POST['soumis']) && !empty($_POST['search'])){
-                $search2 = trim(htmlspecialchars(addslashes($_POST['search'])));
-                $tabChef2 = $this->pubChef->getChefs();
-                $meals2 = $this->pubMeal->getMeals($search2);
-                require_once('./views/public/chefs.php');
-            }
-        $tabChef2 = $this->pubChef->getChefs();
-        require_once('./views/public/chefs.php');
-        }
-        
-    }
-
-    public function home(){
-        require_once('./views/public/home.php');
-    }
-
-    public function contact(){
-        require_once('./views/public/contact.php');
-}
-
-    public function about(){
-        require_once('./views/public/about.php');
     }
 }

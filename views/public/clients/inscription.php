@@ -8,7 +8,7 @@
                     <div class="col-12 ">
                     <img class="fit-picture" src="./assets/pictures/contact.png" alt="" width="100%"/>
                     </div>
-                        <h4 id="titreImg" class="">Rejoignez-nous !</h4>
+                        <h2 id="titreImg" class="">Rejoignez-nous !</h2>
                         <?php
                 if(isset($erreur)){
                     echo $erreur;

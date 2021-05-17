@@ -1,4 +1,4 @@
-
+<?php ob_start(); ?>
 
 <div id="containerItem" class="container">
 <h4 class="text-center">Mon panier</h4>
@@ -23,7 +23,6 @@
             <a class="btn" id="buttonValid" href="index.php?action=del_meal&id=<?= $id_meal;?>"
             onclick="return confirm('Etes vous sûr de vouloir supprimer')"><i class="fas fa-trash"></i> Supprimer          
             </a>
-            
             </div>
           </div>
         </div>

@@ -151,8 +151,8 @@ class Router{
                 }
             }
             else{
-                // $this->ctrPublic->home();
-                session_destroy();
+                $this->ctrPublic->home();
+                session_unset();
             }
         }catch(Exception $e){
             $this->page404($e->getMessage());
